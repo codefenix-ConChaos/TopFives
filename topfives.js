@@ -1,6 +1,6 @@
 // -------------------- - - -  Configurable Options Start - - - ---------------
 const IGNORE_SYSOP            = true;
-const OUTPUT_DELAY            = 1;
+const OUTPUT_DELAY            = 2;
 const TOP_NUM                 = 5;
 const SIMPLE_LIST_FMT         = "  \1k\1h%2d\1n:\1k\1h %-30.30s%10d\n";
 const SIMPLE_LIST_FMT_HL      = "  \1w\1h%2d\1n:\1w\1h %-30.30s%10d\n";
@@ -11,8 +11,8 @@ const ANIM_LIST_HDR_FMT       = "\1n\1b%s";
 const ANIM_LIST_HDR_FMT2      = "\1b\1h%s";
 const ANIM_TIMEFRAME_HDR_X    = 57;
 const ANIM_TIMEFRAME_HDR_Y    = 4;
-const ANIM_TIMEFRAME_HDR_FMT  = "\1k\1h\x017%s";
-const ANIM_TIMEFRAME_HDR_FMT2 = "\1w\1h\x017%s";
+const ANIM_TIMEFRAME_HDR_FMT  = "\1n%s";
+const ANIM_TIMEFRAME_HDR_FMT2 = "\1w\1h%s";
 const ANIM_CATEGORY_1         = "num_of_calls";
 const ANIM_CATEGORY_1_HDR     = "TOP " + TOP_NUM + " CALLERS";
 const ANIM_CATEGORY_1_X       = 3;
@@ -312,6 +312,5 @@ function simpleOutput(json_obj, name, stat, header) {
 }
 
 function right(s, num) {
-	"use strict";
 	return s.slice(-1 * num);
 }
