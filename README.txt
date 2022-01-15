@@ -56,7 +56,7 @@ Instructions:
 Copy the following files to your /sbbs/mods directory:
 
   topfives.js   - the script
-  topfives.msg  - topfives.msg
+  topfives.msg  - template MSG file
   readme.txt    - this file for reference :P
 
 On the command line, change to your /sbbs/exec directory and call the script
@@ -233,4 +233,5 @@ Future plans:
   it's still wasteful. Might be nice to make it so it pulls data from the logs
   only if it's going to be used in the output, but I don't consider it a high
   priority item.
+
 
