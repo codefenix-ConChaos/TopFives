@@ -108,15 +108,12 @@ var doors_ran = 0;
 var door_json = [{}];
 var door_name = "";
 
-var logFiles = directory(backslash(LOG_PATH) + searchMonth + "*" + searchYear + ".log");
+var logFiles = directory(backslash(LOG_PATH) + (searchMonth === ""?"??":searchMonth) + "??" + searchYear + ".log");
 for (var l = 0; l < logFiles.length; l++) {
-   if (file_getname(logFiles[l]).substring(0,2)==="MS") {
-      continue; // skip the mail server logs...
-   }
    fi = new File(logFiles[l]);
-	if (fi.open("r", true)) {
-		rows = fi.readAll();
-		for (var r = 0; r < rows.length; r++) {
+   if (fi.open("r", true)) {
+      rows = fi.readAll();
+      for (var r = 0; r < rows.length; r++) {
          switch (rows[r].substring(0,2).trim()) {
             case "@": // Connection established.
                log_date = rows[r].substring(15, 25).trim();
@@ -137,7 +134,7 @@ for (var l = 0; l < logFiles.length; l++) {
                      break;
                   }
                }
-               if (!doorMatch) {
+               if (!doorMatch && door_name !== "") {
                   door_json.push({
                      "door_name":door_name,
                      "times_ran":1
@@ -179,7 +176,7 @@ for (var l = 0; l < logFiles.length; l++) {
                   }
                }
 
-               if (!userMatch) {
+               if (!userMatch && user_name !== "") {
                   if (IGNORE_SYSOP===true && user_num===1) { // do nothing
                   } else { // add user json object on non-match
                      user_json.push({
