@@ -274,9 +274,9 @@ if (fo.open(outputMode !== "simple"?"a":"w", true)) {
 
 function defaultOutput(json_obj, name, stat, header, x, y) {
    fo.printf("@GOTOXY:"+x+","+y+"@");
-   fo.printf("\1n\1b%s", header);
+   fo.printf(ANIM_LIST_HDR_FMT, header);
    fo.printf("\n@GOTOXY:"+x+","+y+"@@DELAY:" + OUTPUT_DELAY + "@");
-   fo.printf("\1b\1h%s", header);
+   fo.printf(ANIM_LIST_HDR_FMT2, header);
    fo.printf("@DELAY:" + OUTPUT_DELAY + "@\n");
    json_obj.sort(function (a, b) {
        return a[stat] < b[stat];
