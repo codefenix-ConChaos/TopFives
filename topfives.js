@@ -232,8 +232,8 @@ if (outputMode !== "simple") {
          fo.printf(temp);
          fo.close();
       }
-   } else {
-      file_copy(OUTPUT_TEMPLATE_PATH, outputPath); // Just copy the template if
+   //} else {
+   //   file_copy(OUTPUT_TEMPLATE_PATH, outputPath); // Just copy the template if
    }                                               // the above fails...
 }
 if (fo.open(outputMode !== "simple"?"a":"w", true)) {
