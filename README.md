@@ -1,9 +1,9 @@
 # Top Fives (topfives.js)
 
-by Craig Hendricks
-codefenix@conchaos.synchro.net
- telnet://conchaos.synchro.net
-  https://conchaos.synchro.net
+by Craig Hendricks  
+codefenix@conchaos.synchro.net  
+ telnet://conchaos.synchro.net  
+  https://conchaos.synchro.net  
 
 
 
