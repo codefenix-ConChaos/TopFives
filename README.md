@@ -1,4 +1,4 @@
-Top Fives (topfives.js)
+# Top Fives (topfives.js)
 
 by Craig Hendricks
 codefenix@conchaos.synchro.net
@@ -7,7 +7,7 @@ codefenix@conchaos.synchro.net
 
 
 
-Description:
+## Description:
 
 This script parses user stats out of Synchronet BBS's log files and generates
 an animated Top-5 MSG bulletin (or optionally a simple one) which can be
@@ -15,22 +15,22 @@ displayed to users during login.
 
 
 
-How it works:
+## How it works:
 
 It parses the log files (mmddyy.log) in the /sbbs/data/logs directory. It keeps
 a tally of the following categories for each user:
 
-   num_of_calls     - how many times the user logged on
-   time_on          - total time in minutes spent online
-   messages_read    - number of messages the user read
-   messages_posted  - number of messages posted by the user
-   emails           - number of emails sent by the user
-   feedback_sent    - number of emails the user sent to the sysop
-   files_uploaded   - number of individual files uploaded by the user
-   kb_uploaded      - kb-worth of files uploaded by the user
-   files_downloaded - number of individual files downloaded by the user
-   kb_downloaded    - kb-worth of files downloaded by the user
-   doors_ran        - number of external programs ran by the user
+ - num_of_calls     - how many times the user logged on
+ - time_on          - total time in minutes spent online
+ - messages_read    - number of messages the user read
+ - messages_posted  - number of messages posted by the user
+ - emails           - number of emails sent by the user
+ - feedback_sent    - number of emails the user sent to the sysop
+ - files_uploaded   - number of individual files uploaded by the user
+ - kb_uploaded      - kb-worth of files uploaded by the user
+ - files_downloaded - number of individual files downloaded by the user
+ - kb_downloaded    - kb-worth of files downloaded by the user
+ - doors_ran        - number of external programs ran by the user
 
 In addition, it also separately tracks the number of times each external
 program has been ran (displayed in simple mode only, and not to be confused
@@ -51,24 +51,24 @@ animation.
 
 
 
-Instructions:
+## Instructions:
 
 Copy the following files to your /sbbs/mods directory:
 
-  topfives.js   - the script
-  topfives.msg  - template MSG file
-  readme.txt    - this file for reference :P
+ - topfives.js:  the script
+ - topfives.msg: template MSG file
+ - readme.txt:   this file for reference :P
 
 On the command line, change to your /sbbs/exec directory and call the script
 with jsexec using the following syntax:
 
-   jsexec topfives [month/year/lastyear/year number] <path_to_output> <simple>
+   `jsexec topfives [month/year/lastyear/year number] <path_to_output> <simple>`
 
-Examples:
+### Examples:
 
 To generate a Top-5 bulletin for the current month and display it during login:
 
-   jsexec topfives month c:\sbbs\text\menu\logon2.msg
+   `jsexec topfives month c:\sbbs\text\menu\logon2.msg`
 
    (change the number in the logon MSG filename to your liking)
 
@@ -77,27 +77,27 @@ by default.
 
 To generate a Top-5 bulletin for the previous year:
 
-   jsexec topfives lastyear
+   `jsexec topfives lastyear`
 
 To generate a Top-5 bulletin for ANY year, just specify the year:
 
-   jsexec topfives 2019
+   `jsexec topfives 2019`
 
 Specify "simple" as the third parameter to generate a simple non-animated list
 of all available categories. The output path is required in "simple" mode.
 
-   jsexec topfives month c:\sbbs\text\menu\logon2.msg simple
+   `jsexec topfives month c:\sbbs\text\menu\logon2.msg simple`
 
 Add a month and/or year call to your nightly BAT file or run it as a timed
 event in SCFG to automatically generate updated logon MSG bulletins each day.
 
-   cd c:\sbbs\exec
-   jsexec topfives month c:\sbbs\text\menu\logon2.msg
-   jsexec topfives year c:\sbbs\text\menu\logon3.msg
+   `cd c:\sbbs\exec`
+   `jsexec topfives month c:\sbbs\text\menu\logon2.msg`
+   `jsexec topfives year c:\sbbs\text\menu\logon3.msg`
 
 
 
-Execution time:
+## Execution time:
 
 On my system, month bulletins generate nearly instantly, and a bulletin for
 2021 took around 9 seconds to complete.
@@ -109,7 +109,7 @@ to run. Your mileage may vary.
 
 
 
-Accuracy:
+## Accuracy:
 
 It's accurate as best I can tell. I've done some validation by comparing the
 numbers in the output to the search results of Notepad++'s "Find in files"
@@ -118,7 +118,7 @@ utilities which do similar things (top10usr, syncdoor, etc.).
 
 
 
-Configuration and Customization:
+## Configuration and Customization:
 
 Edit the included topfives.msg file to your liking using PabloDraw. MSG formats
 are recommended. The script should take anything you save and append the
@@ -156,8 +156,8 @@ Options Start" and "Configurable Options End".
   lets you specify two different "frames" of formatting. For example, the
   default values fade from standard blue to high-intensity blue.
 
-     ANIM_LIST_HDR_FMT  = "\1n\1b%s"; // standard blue
-     ANIM_LIST_HDR_FMT2 = "\1b\1h%s"; // high-intensity blue
+     `ANIM_LIST_HDR_FMT  = "\1n\1b%s"; // standard blue`
+     `ANIM_LIST_HDR_FMT2 = "\1b\1h%s"; // high-intensity blue`
 
   Refer to the Synchronet Wiki page for CTRL-A code coloring:
      http://wiki.synchro.net/custom:ctrl-a_codes
@@ -166,18 +166,18 @@ Options Start" and "Configurable Options End".
   bulletin, edit the "ANIM_CATEGORY_#" values to your liking. The default
   included topfives.msg template file has room for about 6 categories.
 
-Acceptable ANIM_CATEGORY_# values include:
-   num_of_calls
-   time_on
-   messages_read
-   messages_posted
-   emails
-   feedback_sent
-   files_uploaded
-   kb_uploaded
-   files_downloaded
-   kb_downloaded
-   doors_ran
+  Acceptable ANIM_CATEGORY_# values include:
+   - num_of_calls
+   - time_on
+   - messages_read
+   - messages_posted
+   - emails
+   - feedback_sent
+   - files_uploaded
+   - kb_uploaded
+   - files_downloaded
+   - kb_downloaded
+   - doors_ran
 
 The Top-5 most ran door programs (not to be confused with the Top-5 users who
 ran doors) is not available the default animated output mode. There are a
@@ -196,13 +196,13 @@ Y is the row. If you decide to change these, it may take some trial-and-error
 to get everything looking how you want.
 
 By default, the categories are presented in the following sequence:
-
+```
    +------------+------------+------------+
    | Category 1 | Category 3 | Category 5 |
    +------------+------------+------------+
    | Category 2 | Category 4 | Category 6 |
    +------------+------------+------------+
-
+```
 ANIM_TIMEFRAME_HDR_X and ANIM_TIMEFRAME_HDR_Y are the X and Y coordinates of
 the timeframe header (ie: "For January '21" or "For the year '21").
 
@@ -222,7 +222,7 @@ Have fun! I hope people find this script useful.
 
 
 
-Future plans:
+## Future plans:
 
 - Add a config file so that the javascript file doesn't require modification
   for certain customization options. I admit I was too lazy to implement this
