@@ -74,7 +74,7 @@ if (paramMode === "month") {
 //   searchYear = right((pDate.getFullYear().toString()), 2);
 } else {
    print("Usage:");
-   print("jsexec topfives [month/year/lastyear/year number] <path_to_output> <simple>")
+   print("jsexec topfives <month/year/lastyear/year number> [path_to_output] [simple]")
    exit();
 }
 
