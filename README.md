@@ -13,6 +13,7 @@ This script parses user stats out of Synchronet BBS's log files and generates
 an animated Top-5 MSG bulletin (or optionally a simple one) which can be
 displayed to users during login.
 
+![ezgif-7-d97df17e98](https://user-images.githubusercontent.com/12660452/149643221-7c9abec7-06f1-403d-a622-920c9ad3061f.gif)
 
 
 ## How it works:
