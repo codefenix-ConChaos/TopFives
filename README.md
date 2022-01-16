@@ -63,7 +63,7 @@ Copy the following files to your /sbbs/mods directory:
 On the command line, change to your /sbbs/exec directory and call the script
 with jsexec using the following syntax:
 
-   `jsexec topfives [month/year/lastyear/year number] <path_to_output> <simple>`
+   `jsexec topfives <month/year/lastyear/year number> [path_to_output] [simple]`
 
 ### Examples:
 
