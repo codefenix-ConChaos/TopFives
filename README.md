@@ -92,9 +92,11 @@ of all available categories. The output path is required in "simple" mode.
 Add a month and/or year call to your nightly BAT file or run it as a timed
 event in SCFG to automatically generate updated logon MSG bulletins each day.
 
-   `cd c:\sbbs\exec`
-   `jsexec topfives month c:\sbbs\text\menu\logon2.msg`
-   `jsexec topfives year c:\sbbs\text\menu\logon3.msg`
+   ```
+   cd c:\sbbs\exec
+   jsexec topfives month c:\sbbs\text\menu\logon2.msg
+   jsexec topfives year c:\sbbs\text\menu\logon3.msg
+   ```
 
 
 
@@ -157,17 +159,19 @@ Options Start" and "Configurable Options End".
   lets you specify two different "frames" of formatting. For example, the
   default values fade from standard blue to high-intensity blue.
 
-     `ANIM_LIST_HDR_FMT  = "\1n\1b%s"; // standard blue`
-     `ANIM_LIST_HDR_FMT2 = "\1b\1h%s"; // high-intensity blue`
+     ```
+     ANIM_LIST_HDR_FMT  = "\1n\1b%s"; // standard blue
+     ANIM_LIST_HDR_FMT2 = "\1b\1h%s"; // high-intensity blue
+     ```
 
   Refer to the Synchronet Wiki page for CTRL-A code coloring:
      http://wiki.synchro.net/custom:ctrl-a_codes
 
 - Lastly, if you want to change which categories get displayed in the
-  bulletin, edit the "ANIM_CATEGORY_#" values to your liking. The default
+  bulletin, edit the "ANIM_CATEGORY\_\#" values to your liking. The default
   included topfives.msg template file has room for about 6 categories.
 
-  Acceptable ANIM_CATEGORY_# values include:
+  Acceptable ANIM_CATEGORY\_\# values include:
    - num_of_calls
    - time_on
    - messages_read
@@ -187,11 +191,11 @@ uses the "user" json object in memory, and the most ran doors are tracked in a
 separate json object, and 2) door program names tend to be longer than user
 names and would therefore likely appear truncated in the default mode anyway.
 
-The ANIM_CATEGORY_#_HDR values are the headers for the categories. These may
+The ANIM_CATEGORY\_\#\_HDR values are the headers for the categories. These may
 be anything you want, but should be kept short (24 characters or fewer) so
 they display OK.
 
-The ANIM_CATEGORY_#_X and ANIM_CATEGORY_#_Y values are the X and Y
+The ANIM_CATEGORY\_\#\_X and ANIM_CATEGORY\_\#\_Y values are the X and Y
 coordinates of where the category will be shown onscreen; X is the column and
 Y is the row. If you decide to change these, it may take some trial-and-error
 to get everything looking how you want.
