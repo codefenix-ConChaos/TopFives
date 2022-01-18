@@ -13,7 +13,7 @@ This script parses user stats out of Synchronet BBS's log files and generates
 an animated Top-5 MSG bulletin (or optionally a simple one) which can be
 displayed to users during login.
 
-![ezgif-7-d97df17e98](https://user-images.githubusercontent.com/12660452/149643221-7c9abec7-06f1-403d-a622-920c9ad3061f.gif)
+![ezgif-2-34197df246](https://user-images.githubusercontent.com/12660452/149966458-16612c9b-956d-4a57-a0d0-501c8b6f15a1.gif)
 
 
 ## How it works:
@@ -185,7 +185,7 @@ Options Start" and "Configurable Options End".
    - doors_ran
 
 The Top-5 most ran door programs (not to be confused with the Top-5 users who
-ran doors) is not available the default animated output mode. There are a
+ran doors) is not available in the default animated output mode. There are a
 couple reasons for this: 1) at the time of this writing, the default mode only
 uses the "user" json object in memory, and the most ran doors are tracked in a
 separate json object, and 2) door program names tend to be longer than user
