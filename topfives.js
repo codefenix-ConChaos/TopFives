@@ -119,7 +119,7 @@ for (var l = 0; l < logFiles.length; l++) {
                log_date = rows[r].substring(15, 25).trim();
                break;
             case "++": // Logon
-               user_num = parseInt(rows[r].substring(4,8).trim());
+               user_num = Number(rows[r].substring(4,8).trim());
                user_name = rows[r].substring(11,37).trim();
                break;
             case "X-": // External program execution
