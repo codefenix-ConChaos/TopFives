@@ -177,7 +177,7 @@ for (var l = 0; l < logFiles.length; l++) {
 
                 downloaded_stats = rows[r].substring(rows[r].indexOf("D:") + 2).trim();
                 kb_downloaded    = parseXferStat(downloaded_stats, 0);
-                files_downloaded = parseXferStat(downloaded_stats, 0);
+                files_downloaded = parseXferStat(downloaded_stats, 1);
 
                 var userMatch = false;
                 for (var index = 0; index < Object.keys(user_json).length; ++index) {
